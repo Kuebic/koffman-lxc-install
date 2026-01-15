@@ -56,7 +56,7 @@ msg_ok "System updated"
 
 # Install dependencies
 msg_info "Installing dependencies"
-apt-get install -y -qq curl git sqlite3 ca-certificates wget
+apt-get install -y -qq curl git sqlite3 ca-certificates wget gcc build-essential
 msg_ok "Dependencies installed"
 
 # Install Go
@@ -87,7 +87,8 @@ cd koffan
 msg_ok "Repository cloned"
 
 msg_info "Building Koffan (this may take a minute)"
-/usr/local/go/bin/go build -ldflags="-s -w" -o koffan .
+# CGO_ENABLED=1 is required for go-sqlite3
+CGO_ENABLED=1 /usr/local/go/bin/go build -ldflags="-s -w" -o koffan .
 msg_ok "Koffan built successfully"
 
 # Create data directory
