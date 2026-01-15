@@ -47,7 +47,7 @@ systemctl restart koffan
 ```bash
 cd /opt/koffan
 git pull
-/usr/local/go/bin/go build -ldflags="-s -w" -o koffan .
+CGO_ENABLED=1 /usr/local/go/bin/go build -ldflags="-s -w" -o koffan .
 systemctl restart koffan
 ```
 
