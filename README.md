@@ -13,7 +13,7 @@ Standalone installer for [Koffan](https://github.com/PanSalut/Koffan) shopping l
 2. SSH into the container and run:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/Kuebic/koffman-lxc-install/main/koffan-lxc-install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/Kuebic/koffman-lxc-install/refs/heads/main/koffman-lxc-install.sh)
 ```
 
 3. Follow the prompts for password, port, and language
